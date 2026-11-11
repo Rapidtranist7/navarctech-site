@@ -615,6 +615,9 @@ p + p {
   color: var(--color-text-muted);
   max-width: none;
 }
+.site-footer .legal--marks {
+  margin-top: 0;
+}
 
 
 /* ---------- Sub-page hero ---------- */
@@ -1375,40 +1378,57 @@ p + p {
   max-width: 14ch;
 }
 
-/* ---------- Trademark marks ---------- */
+/* ---------- Trademark notices ---------- */
+/* Text marks: "Name™" on the most prominent use of a brand name on each page. */
 .tm {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.42em;
+  font-style: normal;
+  font-size: 1.1em;
   line-height: 0;
-  vertical-align: super;
   letter-spacing: 0;
-  margin-left: 0.1em;
-  white-space: nowrap;
-}
-p .tm {
-  font-size: 0.6em;
-}
-.logo-tm {
-  position: relative;
-  display: inline-flex;
-  align-items: flex-start;
-  flex-shrink: 0;
-}
-.logo-tm .tm {
   vertical-align: baseline;
-  line-height: 1;
-  font-size: 7px;
-  margin-left: 2px;
-  color: var(--color-text-muted);
 }
-.logo-tm--brand .tm {
+h1 .tm,
+h2 .tm,
+h3 .tm,
+.more__list strong .tm {
+  font-size: 0.92em;
+  font-weight: 400;
+}
+/* Logo mark: a small "TM" set against the upper right of the header logo's lettering. */
+.logo-tm {
   position: absolute;
-  top: 0;
-  right: -0.65rem;
-  margin: 0;
-  font-size: 0.55rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  user-select: none;
 }
-.site-footer .legal--tm {
-  margin-top: var(--space-2);
+.brand {
+  position: relative;
+}
+.brand .logo-tm {
+  left: calc(100% + 2px);
+  top: 26%;
+  color: #00254b;
+}
+@media (min-width: 1024px) {
+  .logo-tm {
+    font-size: 9px;
+  }
+  /* The mark hangs just right of the logo; start the right-hand nav a little later to clear it.
+     The header columns are equal, so the logo stays centred. */
+  .nav--right ul {
+    padding-left: 14px;
+  }
+}
+/* Tighten the nav spacing on narrow desktops so the labels stay on one line beside the
+   logo mark. */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .nav ul {
+    gap: var(--space-4);
+  }
 }
