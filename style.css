@@ -1375,73 +1375,40 @@ p + p {
   max-width: 14ch;
 }
 
-/* ---------- Trademark notices ---------- */
-/* Text marks: "Name™" in running copy, headings, navigation and buttons. */
+/* ---------- Trademark marks ---------- */
 .tm {
   font-family: var(--font-body);
   font-weight: 500;
-  font-style: normal;
-  font-size: 1.1em;
+  font-size: 0.42em;
   line-height: 0;
+  vertical-align: super;
   letter-spacing: 0;
-  vertical-align: baseline;
+  margin-left: 0.1em;
+  white-space: nowrap;
 }
-h1 .tm,
-h2 .tm,
-h3 .tm,
-.more__list strong .tm {
-  font-size: 0.92em;
-  font-weight: 400;
+p .tm {
+  font-size: 0.6em;
 }
-/* Logo marks: a small "TM" set against the upper right of each logo's lettering. */
 .logo-tm {
-  position: absolute;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 8px;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  pointer-events: none;
-  user-select: none;
-}
-.brand {
   position: relative;
-}
-.brand .logo-tm {
-  left: calc(100% + 2px);
-  top: 26%;
-  color: #00254b;
-}
-.lockup__logo {
-  position: relative;
-  display: block;
+  display: inline-flex;
+  align-items: flex-start;
   flex-shrink: 0;
 }
-.lockup__logo .lockup__mark {
-  display: block;
+.logo-tm .tm {
+  vertical-align: baseline;
+  line-height: 1;
+  font-size: 7px;
+  margin-left: 2px;
+  color: var(--color-text-muted);
 }
-.lockup__logo .logo-tm {
-  left: 93.4%;
-  top: 72.4%;
-  color: #001936;
+.logo-tm--brand .tm {
+  position: absolute;
+  top: 0;
+  right: -0.65rem;
+  margin: 0;
+  font-size: 0.55rem;
 }
-@media (min-width: 1024px) {
-  .logo-tm {
-    font-size: 9px;
-  }
-  /* The mark hangs just right of the logo; start the right-hand nav a little later to clear it.
-     The header columns are equal, so the logo stays centred. */
-  .nav--right ul {
-    padding-left: 14px;
-  }
-  .lockup__logo .logo-tm {
-    font-size: 10px;
-  }
-}
-/* The mark adds a little width to the longest nav label; tighten the nav spacing on
-   narrow desktops so the labels stay on one line. */
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .nav ul {
-    gap: var(--space-4);
-  }
+.site-footer .legal--tm {
+  margin-top: var(--space-2);
 }
